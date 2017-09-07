@@ -19,7 +19,7 @@ public class Calculate {
 		return (operand1 + operand2) / 2;
 	}
 	//This method takes three doubles and returns their average
-	public static double average2(double operand1, double operand2, double operand3) {
+	public static double average(double operand1, double operand2, double operand3) {
 		return (operand1 + operand2 + operand3) / 3;
 	}
 	//This method takes a double and returns a double, converting radians to degrees
