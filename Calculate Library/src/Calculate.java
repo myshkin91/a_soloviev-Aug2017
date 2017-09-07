@@ -26,7 +26,11 @@ public class Calculate {
 	public static double toDegrees(double radians) {
 		return (radians * 180) / 3.14159;
 	}
+	//This method takes a double and returns a double, converting degrees to radians
 	public static double toRadians(double degrees) {
 		return (degrees * 3.14159) / 180;
+	}
+	//public static double discriminant(double operand1, double operand2, double operand3) {
+		//return (radians * 180) / 3.14159;
 	}
 }
