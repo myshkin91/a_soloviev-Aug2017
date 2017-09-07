@@ -22,11 +22,16 @@ public class Calculate {
 	public static double average2(double operand1, double operand2, double operand3) {
 		return (operand1 + operand2 + operand3) / 3;
 	}
-	//This method takes a double and returns returns a double, converting radians to degrees
+	//This method takes a double and returns a double, converting radians to degrees
 	public static double toDegrees(double radians) {
 		return (radians * 180) / 3.14159;
 	}
+	//This method takes a double and returns a double, converting degrees to radians
 	public static double toRadians(double degrees) {
 		return (degrees * 3.14159) / 180;
+	}
+	//This method provides coefficients of a quadratic equation in standard form and returns the value of the discriminant.
+	public static double discriminant(double operand1, double operand2, double operand3) {
+		return (operand2 * operand2) - (4 * operand1 * operand3);
 	}
 }
