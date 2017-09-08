@@ -34,4 +34,7 @@ public class Calculate {
 	public static double discriminant(double operand1, double operand2, double operand3) {
 		return (operand2 * operand2) - (4 * operand1 * operand3);
 	}
+	//public static int toImproperFrac(int wholeNumber, int numerator, int denominator) {
+		//return (whole number * denominator) + numerator
+	//}
 }
