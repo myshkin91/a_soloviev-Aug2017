@@ -34,7 +34,18 @@ public class Calculate {
 	public static double discriminant(double operand1, double operand2, double operand3) {
 		return (operand2 * operand2) - (4 * operand1 * operand3);
 	}
-	//public static int toImproperFrac(int wholeNumber, int numerator, int denominator) {
-		//return (whole number * denominator) + numerator
-	//}
+	//This method takes the integer parts of a mixed number and returns an improper fraction
+	public static String toImproperFrac(int whole, int numerator, int denominator) {
+		return ((whole * denominator) + numerator) + "/" + denominator;
+	}
+	//This method takes the integer parts of an improper fraction and returns a mixed number 
+	public static String toMixedNum(int numerator, int denominator) {
+		return (numerator / denominator) + " " + (numerator % denominator) + "/" + (denominator);
+	}
+	//This method accepts a four integers and a String and then returns a String. A call to foil converts a binomial multiplication of the form (ax + b)(cx + d) into a quadratic equation of the form ax^2 + bx + c. 
+	public static String foil (int a, int b, int c, int d, String variableLetter) {
+		return (a * c) + variableLetter + "^2 + " + ((a * d) + (b * c)) + variableLetter + " + " + (b * d);
+	}
+	//public static int isDivisibleBy ()
 }
+
