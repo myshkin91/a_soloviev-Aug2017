@@ -46,6 +46,8 @@ public class Calculate {
 	public static String foil (int a, int b, int c, int d, String variableLetter) {
 		return (a * c) + variableLetter + "^2 + " + ((a * d) + (b * c)) + variableLetter + " + " + (b * d);
 	}
-	//public static boolean isDivisibleBy (int )
+	public static boolean isDivisibleBy (int dividend, int divisor) {
+		return (dividend % divisor == 0) ;
+	}
 }
 
