@@ -46,8 +46,67 @@ public class Calculate {
 	public static String foil (int a, int b, int c, int d, String variableLetter) {
 		return (a * c) + variableLetter + "^2 + " + ((a * d) + (b * c)) + variableLetter + " + " + (b * d);
 	}
+	//This method accepts two integers and returns a boolean. A call to isDivisibleBy determines whether or not one integer is evenly divisible by another.
 	public static boolean isDivisibleBy (int dividend, int divisor) {
 		return (dividend % divisor == 0) ;
 	}
-}
+	//This method accepts a double and returns a double. A call to absValue returns the absolute value of the number passed.
+	public static double absValue (double operand) {
+		if (operand >= 0) {
+			double absValue = operand;
+			return absValue;
+		} else {
+			double absValue = (-1 * operand);
+			return absValue;
+		}
+	}
+	//This method accepts two doubles and returns a double. A call to max returns the larger of the values passed.
+	public static double max (double operand1, double operand2) {
+		if (operand1 > operand2) {
+			double max = operand1;
+			return max;
+		} else {
+			double max = operand2;
+			return max;
+		}
+	}
+	//This method accepts three doubles and returns a double. A call to max returns the larger of the values passed.
+	public static double max (double A, double B, double C) {
+		if (A >= B) {
+		}
+		if (A >= C) {
+			double max = A;
+			return max;
+		} else if (B >= C) {
+			double max = B;
+			return max;
+		} else {
+			double max = C;
+			return max;
+		}
+		
+	}
+	//This method accepts two integers and returns an integer. A call to min returns the smaller of the values passed.
+	public static int min ( int A, int B) {
+		if (A<=B) {
+			int min = A;
+			return min;
+		} else {
+			int min = B;
+			return min;
+		}
+	}
+	//A call to round2 rounds a double correctly to 2 decimal places and returns a double.
+	public static double round2 (double operand) {
+		operand = (operand * 100);
+		double x = operand;
+		int a = (int) x;
+		return (a / 100.00);
+	}
+	//public static double exponent (double operand1, int exponent) {
+		//operand1 = (operand1 ^ (exponent));
+		//return operand1;
+	//}
+
+	}
 
