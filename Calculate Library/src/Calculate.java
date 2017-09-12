@@ -103,10 +103,14 @@ public class Calculate {
 		int a = (int) x;
 		return (a / 100.00);
 	}
-	//public static double exponent (double operand1, int exponent) {
-		//operand1 = (operand1 ^ (exponent));
-		//return operand1;
-	//}
+	//This method accepts a double and an integer and returns a double. A call to exponent raises a value to a positive integer power.
+	public static double exponent (double operand1, int exponent) {
+		double answer = 1.00;
+		for (int i = 0; i < exponent; i++) {
+			answer = answer * operand1;
+		}
+		return answer;
+	}
 
 	}
 
