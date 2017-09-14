@@ -111,6 +111,11 @@ public class Calculate {
 		}
 		return answer;
 	}
+	//public static int factorial (int operand) {
+		//while (operand > 0) {
+			//System.out.println
+		//}
+	//}
 
 	}
 
