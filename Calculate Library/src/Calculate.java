@@ -48,6 +48,9 @@ public class Calculate {
 	}
 	//This method accepts two integers and returns a boolean. A call to isDivisibleBy determines whether or not one integer is evenly divisible by another.
 	public static boolean isDivisibleBy (int dividend, int divisor) {
+		if (divisor == 0) {
+			throw new IllegalArgumentException("Cannot Divide By Zero");
+		}
 		return (dividend % divisor == 0) ;
 	}
 	//This method accepts a double and returns a double. A call to absValue returns the absolute value of the number passed.
@@ -110,11 +113,7 @@ public class Calculate {
 		result = tempInt /100.0;
 		return result;
 	}
-		//operand = (operand * 100);
-		//double x = operand;
-		//int a = (int) x;
-		//return (a / 100.00);
-	//}
+		
 	//This method accepts a double and an integer and returns a double. A call to exponent raises a value to a positive integer power.
 	public static double exponent (double operand1, int exponent) {
 		double answer = 1.00;
@@ -123,11 +122,15 @@ public class Calculate {
 		}
 		return answer;
 	}
-	//public static int factorial (int operand) {
-		//while (operand > 0) {
-			//System.out.println
-		//}
-	//}
-
+	public static int factorial (int operand) {
+		int answer = 1;
+		while (operand > 0) {
+			answer = answer * operand;
+			operand --;
+		}
+		return answer;
+		}
 	}
+
+
 
