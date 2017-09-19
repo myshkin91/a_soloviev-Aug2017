@@ -97,12 +97,24 @@ public class Calculate {
 		}
 	}
 	//A call to round2 rounds a double correctly to 2 decimal places and returns a double.
-	public static double round2 (double operand) {
-		operand = (operand * 100);
-		double x = operand;
-		int a = (int) x;
-		return (a / 100.00);
+	public static double round2 (double orig) {
+		double result = 0.0;
+		
+		int tempInt = (int)(orig*1000);
+		int roundNum = tempInt % 10;
+		tempInt = tempInt / 10;
+		if (roundNum >= 5 && tempInt >0)
+			tempInt++;
+		else if(roundNum <=-5 && tempInt <0)
+			tempInt--;
+		result = tempInt /100.0;
+		return result;
 	}
+		//operand = (operand * 100);
+		//double x = operand;
+		//int a = (int) x;
+		//return (a / 100.00);
+	//}
 	//This method accepts a double and an integer and returns a double. A call to exponent raises a value to a positive integer power.
 	public static double exponent (double operand1, int exponent) {
 		double answer = 1.00;
