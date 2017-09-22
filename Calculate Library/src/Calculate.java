@@ -130,6 +130,40 @@ public class Calculate {
 		}
 		return answer;
 		}
+	public static boolean isPrime (int operand) {
+		if (operand < 2) {
+			return false;
+		}else if (operand == 2) {
+			return true;
+		} else
+			for (int divisor = 2; divisor < operand; divisor++) {
+				if (isDivisibleBy(operand, divisor)) {
+					return false;
+				}
+			}
+		return true;
+	}
+	public static int gcf (int operand1, int operand2) {
+		if(operand1 == operand2) {
+			return operand1;
+		}else if (operand1 == 1 || operand2 == 1) {
+			return 1;
+		}else {
+			for (int factor = operand1; factor >1; factor--) {
+				if (isDivisibleBy(operand1, factor) && isDivisibleBy(operand2, factor)) {
+					return factor;
+				}
+			}
+		}
+		return 1;
+	}
+	public static double sqrt (double operand) {
+		double guess = operand/2;
+		while ((guess * guess > operand +0.005) || (guess * guess) < operand - 0.005) {
+			guess = (0.5 * ((operand / guess) +guess));
+		}
+		return round2 (guess);
+	}
 	}
 
 
