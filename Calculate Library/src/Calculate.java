@@ -122,6 +122,7 @@ public class Calculate {
 		}
 		return answer;
 	}
+	//This method accepts an integer and returns an integer. A call to factorial returns the factorial if the value passed.
 	public static int factorial (int operand) {
 		int answer = 1;
 		while (operand > 0) {
@@ -130,6 +131,7 @@ public class Calculate {
 		}
 		return answer;
 		}
+	//This method accepts an integer and returns a boolean. A call to isPrime determines whether or not an integer is prime.
 	public static boolean isPrime (int operand) {
 		if (operand < 2) {
 			return false;
@@ -143,6 +145,7 @@ public class Calculate {
 			}
 		return true;
 	}
+	//This method accepts two positive integers and returns an integer. A call to gcf finds the greatest common factor of two integers.
 	public static int gcf (int operand1, int operand2) {
 		if(operand1 == operand2) {
 			return operand1;
@@ -157,6 +160,7 @@ public class Calculate {
 		}
 		return 1;
 	}
+	//This method accepts a double and returns a double. A call to sqrt returns an approximation of the square root of the values passed, rounded to two decimal places.
 	public static double sqrt (double operand) {
 		double guess = operand/2;
 		while ((guess * guess > operand +0.005) || (guess * guess) < operand - 0.005) {
