@@ -3,10 +3,7 @@
 * This is our home grown library that will contain various mathematical methods
 */
 public class Calculate {
-	/* This method takes an integer and returns its square
-	 * 
-	 */
-	
+	//This method takes an integer and returns its square
 	public static int square(int operand) {
 		return operand * operand;
 	}
@@ -168,6 +165,27 @@ public class Calculate {
 		}
 		return round2 (guess);
 	}
+	public static String quadForm(int a, int b, int c) {
+		double aa = a;
+		double bb = b;
+		double cc = c;
+		double x = Calculate.discriminant(aa, bb, cc);
+		if (x <0) {
+			return "no real roots";
+		} else {
+			if (x == 0) {
+				double round = Calculate.round2((-b/2*a));
+				return "" + round;
+			} else {
+				double firstroot = Calculate.round2((-b + Calculate.sqrt(x))/(2*a));
+				double secondroot = Calculate.round2((-b - Calculate.sqrt(x))/(2*a));
+					return firstroot + "and" + secondroot;
+			}
+		}
+	}
+			
+		
+	
 	}
 
 
