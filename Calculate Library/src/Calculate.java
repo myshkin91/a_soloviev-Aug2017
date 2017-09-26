@@ -96,6 +96,17 @@ public class Calculate {
 			return min;
 		}
 	}
+	//This method accepts two doubles and returns a double.
+	public static double min ( double A, double B) {
+		if (A<=B) {
+			double min = A;
+			return min;
+		} else {
+			double min = B;
+			return min;
+		}
+	}
+	
 	//A call to round2 rounds a double correctly to 2 decimal places and returns a double.
 	public static double round2 (double orig) {
 		double result = 0.0;
@@ -166,10 +177,10 @@ public class Calculate {
 		return round2 (guess);
 	}
 	public static String quadForm(int a, int b, int c) {
-		double aa = a;
-		double bb = b;
-		double cc = c;
-		double x = Calculate.discriminant(aa, bb, cc);
+		double w = a;
+		double y = b;
+		double z = c;
+		double x = Calculate.discriminant(w, y, z);
 		if (x <0) {
 			return "no real roots";
 		} else {
@@ -177,9 +188,9 @@ public class Calculate {
 				double round = Calculate.round2((-b/2*a));
 				return "" + round;
 			} else {
-				double firstroot = Calculate.round2((-b + Calculate.sqrt(x))/(2*a));
-				double secondroot = Calculate.round2((-b - Calculate.sqrt(x))/(2*a));
-					return firstroot + "and" + secondroot;
+				double positiveroot = Calculate.round2((-b + Calculate.sqrt(x))/(2*a));
+				double negativeroot = Calculate.round2((-b - Calculate.sqrt(x))/(2*a));
+					return min(negativeroot, positiveroot) + " and " + max(negativeroot, positiveroot);
 			}
 		}
 	}
