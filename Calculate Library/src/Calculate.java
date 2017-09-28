@@ -195,9 +195,8 @@ public class Calculate {
 		}
 	}
 			
-		
 	
-	}
+}
 
 
 
