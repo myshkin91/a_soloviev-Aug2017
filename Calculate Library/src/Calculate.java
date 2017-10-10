@@ -71,38 +71,38 @@ public class Calculate {
 		}
 	}
 	//This method accepts three doubles and returns a double. A call to max returns the larger of the values passed.
-	public static double max (double A, double B, double C) {
-		if (A >= B) {
+	public static double max (double num1, double num2, double num3) {
+		if (num1 >= num2) {
 		}
-		if (A >= C) {
-			double max = A;
+		if (num1 >= num3) {
+			double max = num1;
 			return max;
-		} else if (B >= C) {
-			double max = B;
+		} else if (num2 >= num3) {
+			double max = num2;
 			return max;
 		} else {
-			double max = C;
+			double max = num3;
 			return max;
 		}
 		
 	}
 	//This method accepts two integers and returns an integer. A call to min returns the smaller of the values passed.
-	public static int min ( int A, int B) {
-		if (A<=B) {
-			int min = A;
+	public static int min ( int num1, int num2) {
+		if (num1<=num2) {
+			int min = num1;
 			return min;
 		} else {
-			int min = B;
+			int min = num2;
 			return min;
 		}
 	}
 	//This method accepts two doubles and returns a double.
-	public static double min ( double A, double B) {
-		if (A<=B) {
-			double min = A;
+	public static double min ( double num1, double num2) {
+		if (num1<=num2) {
+			double min = num1;
 			return min;
 		} else {
-			double min = B;
+			double min = num2;
 			return min;
 		}
 	}
@@ -176,6 +176,7 @@ public class Calculate {
 		}
 		return round2 (guess);
 	}
+	//This method accepts three integers and returns a String. A call to quadForm uses the coefficients of a quadratic equation in standard form and uses the quadratic formula to approximate the real roots, if any. 
 	public static String quadForm(int a, int b, int c) {
 		double w = a;
 		double y = b;
@@ -194,9 +195,8 @@ public class Calculate {
 			}
 		}
 	}
-			
-	
-}
+	}
+
 
 
 
