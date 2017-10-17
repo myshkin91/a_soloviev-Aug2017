@@ -1,3 +1,4 @@
+//Alex Soloviev 
 import java.util.*;
 public class QuadraticClient {
 	@SuppressWarnings("resource")

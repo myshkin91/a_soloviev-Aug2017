@@ -1,4 +1,4 @@
-
+//Alex Soloviev
 public class Quadratic {
 
 	//This method provides coefficients of a quadratic equation in standard form and returns the value of the discriminant.
@@ -27,7 +27,7 @@ public class Quadratic {
 			}
 			return round2 (guess);
 		}
-		
+		//This method will three doubles and return a string. Through the input of coefficients a, b, and c, quadrDescriber will describe the characteristics of the quadratic equation.
 		public static String quadrDescriber (double a, double b, double c) {
 			 String open = "";
 			 String symmetry = "";
@@ -47,7 +47,6 @@ public class Quadratic {
 			 double x = -b/(2*a);
 			 symmetry = ("Axis of Symmetry: " + x);
 			 
-			 //double y = a + b*Math.pow(x,2) + c;
 			 double y = a*(x*x) + b*(x) + c;
 			 vertex ="Vertex: " + "(" + x + ", " + y + ")";
 			
