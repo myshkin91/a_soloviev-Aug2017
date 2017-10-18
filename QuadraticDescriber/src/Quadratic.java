@@ -1,4 +1,6 @@
 //Alex Soloviev
+//October 17, 2017
+
 public class Quadratic {
 
 	//This method provides coefficients of a quadratic equation in standard form and returns the value of the discriminant.
@@ -19,6 +21,24 @@ public class Quadratic {
 			result = tempInt /100.0;
 			return result;
 		}
+		/*public static double round2 (double operand) {
+			int times100 = (int) (operand * 100);
+			int thousandths = times100 %10;
+			times100 = times100/10;
+			if (thousandths >= 5) {
+				times100++;
+				double rounded = (times100 / 100.00);
+				return rounded;
+			} else if (thousandths <= -5) {
+				times100--;
+				double rounded = (times100/ 100.00);
+				return rounded;
+			}else {
+				double rounded = (times100/100.00);
+				return rounded;
+			}
+			}*/
+		
 		//This method accepts a double and returns a double. A call to sqrt returns an approximation of the square root of the values passed, rounded to two decimal places.
 		public static double sqrt (double operand) {
 			double guess = operand/2;
@@ -54,14 +74,14 @@ public class Quadratic {
 			 		xintercept = "x-intercept(s): None";
 			 	
 			 else {
-				 double oneRoot = (-b + (sqrt(discriminant(a,b,c))))/(a*2.0);
-				 double twoRoot = (-b - (sqrt(discriminant(a,b,c))))/(a*2.0);
+				 double firstRoot = (-b + (sqrt(discriminant(a,b,c))))/(a*2.0);
+				 double secondRoot = (-b - (sqrt(discriminant(a,b,c))))/(a*2.0);
 			     
-				 if (oneRoot==twoRoot) 
-			    		xintercept =  "x-intercept(s): "+ twoRoot;
+				 if (firstRoot==secondRoot) 
+			    		xintercept =  "x-intercept(s): "+ secondRoot;
 			    	
 				 else	
-			    		xintercept = "x-intercept(s): " + oneRoot + " and " +twoRoot;
+			    		xintercept = "x-intercept(s): " + firstRoot + " and " +secondRoot;
 			 }
 			 yintercept = "y-intercept: " + c;
 			 String answer = heading + "\n"+ equation + "\n" + "\n" + open + "\n" +  symmetry + "\n"+ vertex + "\n" + xintercept + "\n"+ yintercept;
