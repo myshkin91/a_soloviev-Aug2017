@@ -20,7 +20,7 @@ public class DoMath {
 		System.out.println(Calculate.max(6.0, 7.0));
 		System.out.println(Calculate.max(6.0, 7.0, 8.0));
 		System.out.println(Calculate.min(6, 7));
-		System.out.println(Calculate.round2(-6.13522947882545));
+		System.out.println(Calculate.round2(-6.13539749245));
 		System.out.println(Calculate.exponent(4.00, 4));
 		System.out.println(Calculate.factorial(4));
 		System.out.println(Calculate.isPrime( 4));
