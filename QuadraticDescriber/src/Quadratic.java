@@ -1,4 +1,5 @@
 //Alex Soloviev
+//
 public class Quadratic {
 
 	//This method provides coefficients of a quadratic equation in standard form and returns the value of the discriminant.
