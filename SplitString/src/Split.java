@@ -1,5 +1,5 @@
 
-import java.util.*;
+import java.util.Arrays;
 public class Split {
 	public static void main(String[] args) {
 		// Your task Part 0
@@ -17,7 +17,7 @@ public class Split {
 		System.out.println(Arrays.toString("Ireallylikereallyred apples".split("really")));
 		System.out.println(Arrays.toString("I reallyreally like apples".split("really")));
 		System.out.println(Arrays.toString("123123".split("1")));
-		//Arrays.toString("applespineapplesbreadlettustomatobaconmayohambreadcheese");
+		System.out.println("applespineapplesbreadlettustomatobaconmayohambreadcheese".split("bread")[0]);
 	}
 		//Your task Part 1:
 		public static String sandwichSplitter (String sandwich) {
