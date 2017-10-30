@@ -1,4 +1,4 @@
-import java.lang.reflect.Array;
+
 import java.util.*;
 public class Split {
 	public static void main(String[] args) {
@@ -17,10 +17,10 @@ public class Split {
 		System.out.println(Arrays.toString("Ireallylikereallyred apples".split("really")));
 		System.out.println(Arrays.toString("I reallyreally like apples".split("really")));
 		System.out.println(Arrays.toString("123123".split("1")));
-		//"applespineapplesbreadlettustomatobaconmayohambreadcheese";
+		//Arrays.toString("applespineapplesbreadlettustomatobaconmayohambreadcheese");
 	}
 		//Your task Part 1:
-		public static String sandwichSplitter(String sandwich) {
+		public static String sandwichSplitter (String sandwich) {
 			
 			String [] sandwichArray = sandwich.split("bread");
 			String ingredients= "";
@@ -30,6 +30,7 @@ public class Split {
 			return ingredients;
 			
 		}
+	
 		/*Write a method that take in a string like "applespineapplesbreadlettustomatobaconmayohambreadcheese" describing a sandwich
 		* use String.split to split up the sandwich by the word "bread" and return what's in the middle of the sandwich and ignores what's on the outside
 		* What if it's a fancy sandwich with multiple pieces of bread?
