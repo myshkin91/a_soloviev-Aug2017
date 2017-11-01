@@ -1,4 +1,6 @@
-
+//Alex Soloviev
+//10/31/17
+import java.util.*;
 public class ArraysLab3 {
 	//This method accepts two arrays of integers arr1 and arr2 and returns an array of integers, in which every element is the sum of the elements at that index for the arrays arr1 and arr2.
 	public static int[] sum(int[] arr1, int[] arr2) {
