@@ -17,7 +17,7 @@ public class LotsOfCopies {
 
 public static void changeMe(int x, String str, int[] arr) {
 	x = 8;
-	str = "SCPA";
+	str = "CSAP";
 	for (int i = 0; i < arr.length; i++) {
 		arr[i] += 1;
 	}
@@ -29,12 +29,12 @@ public static void  aTob() {
 	System.out.println(numB); 
 	String strA = "Hello";
 	String strB = strA;
-	strA = "World";
+	strA = "Bye!";
 	System.out.println(strB); 
-	int[] arrA = {2, 4, 6, 8};
+	int[] arrA = {3, 6, 9, 12};
 	int[] arrB = arrA;
 	for (int i = 0; i < arrA.length; i++) {
-		arrA[i] += 1;
+		arrA[i] = 0;
 	} 
 	System.out.println(Arrays.toString(arrB));
 }
