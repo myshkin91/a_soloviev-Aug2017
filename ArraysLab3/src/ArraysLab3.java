@@ -1,7 +1,28 @@
 //Alex Soloviev
 //10/31/17
-import java.util.*;
+import java.util.Arrays;
+
 public class ArraysLab3 {
+	
+	public static void main (String[] args) {
+		int [] a1= {5,10,15,20,25,30,35,40};
+		int [] a2= {7,14,21,28,35,42,49,56};
+		int [] sumArr = sum(a1,a2);
+		int appendNum = 200;
+		int [] appendArr = append(a1, appendNum);
+		int removeIdx = 5;
+		int [] removeArr = remove(a2, removeIdx);
+		int sumOfEvens = sumEven(appendArr);
+		rotateRight(a1);
+		
+		System.out.println(Arrays.toString(sumArr));
+		System.out.println(Arrays.toString(appendArr));
+		System.out.println(Arrays.toString(removeArr));
+		System.out.println(sumOfEvens);
+		System.out.println(Arrays.toString(a1));
+		
+		
+	}
 	//This method accepts two arrays of integers arr1 and arr2 and returns an array of integers, in which every element is the sum of the elements at that index for the arrays arr1 and arr2.
 	public static int[] sum(int[] arr1, int[] arr2) {
 		int[] arrSum = new int[arr1.length];
