@@ -30,7 +30,7 @@ public class ArraysLab3 {
 			arrSum[i] = arr1[i] + arr2[i];
 		}return arrSum;
 	}
-	
+	//This method an array of integer arr and an integer num and returns an array of integers with num added at the end.
 	public static int[] append(int[] arr, int num) {
 		int[] arrPlusNum = new int [arr.length + 1];
 		for(int i = 0; i <= arr.length -1; i++) {
@@ -39,7 +39,7 @@ public class ArraysLab3 {
 		arrPlusNum[arr.length + 1] = num;
 		return arrPlusNum;
 	}
-	
+	//This method an array of integers arr and an integer idx and returns an array of integers consisting of all of the elements of arr.
 	public static int[] remove(int[] arr, int idx) {
 		int[] arrMinusIdx = new int[arr.length-1];
 		for( int i =0; i<=arr.length-2; i++) {
@@ -49,14 +49,14 @@ public class ArraysLab3 {
 			
 		}return arrMinusIdx;
 	}
-	
+	//This method accepts an array of integers arr and returns the sum.
 	public static int sumEven(int[] arr) {
 		int sum = 0;
 		for(int i = 0; i <= arr.length-1; i+=2) {
 			sum += arr[i];
 		}return sum;
 	}
-	
+	// This method accepts an array of integers arr and shifts the values in the array.
 	public static void rotateRight(int[] arr) {
 		int last = arr[arr.length-1];
 		for( int i = arr.length-1; i >=1; i--) {
