@@ -39,6 +39,7 @@ public class ArraysLab3 {
 		arrPlusNum[arr.length + 1] = num;
 		return arrPlusNum;
 	}
+
 	//This method an array of integers arr and an integer idx and returns an array of integers consisting of all of the elements of arr.
 	public static int[] remove(int[] arr, int idx) {
 		int[] arrMinusIdx = new int[arr.length-1];
