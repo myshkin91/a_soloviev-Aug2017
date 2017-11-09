@@ -33,10 +33,10 @@ public class ArraysLab3 {
 	//This method an array of integer arr and an integer num and returns an array of integers with num added at the end.
 	public static int[] append(int[] arr, int num) {
 		int[] arrPlusNum = new int [arr.length + 1];
-		for(int i = 0; i <= arr.length -1; i++) {
+		for(int i = 0; i < arr.length; i++) {
 			arrPlusNum[i] = arr[i];
 		}
-		arrPlusNum[arr.length + 1] = num;
+		arrPlusNum[arr.length] = num;
 		return arrPlusNum;
 	}
 
@@ -60,7 +60,7 @@ public class ArraysLab3 {
 	// This method accepts an array of integers arr and shifts the values in the array.
 	public static void rotateRight(int[] arr) {
 		int last = arr[arr.length-1];
-		for( int i = arr.length-1; i >=1; i--) {
+		for( int i = arr.length-1; i >0; i--) {
 			arr[i] = arr[i-1];
 		}
 		arr[0]=last;
