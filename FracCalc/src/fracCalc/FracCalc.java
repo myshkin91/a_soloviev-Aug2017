@@ -7,7 +7,7 @@ public class FracCalc {
         // TODO: Read the input from the user and call produceAnswer with an equation
     	Scanner fractionInput = new Scanner(System.in);
     	System.out.println("Give me an equation");
-    	while(true) {
+    	while( true) {
     			String userInput = fractionInput.nextLine();
     			if(userInput.equals("quit")) {
     				break;
@@ -35,13 +35,17 @@ public class FracCalc {
         
         if(operator.equals("+") || operator.equals("-")){
         		result = addSubtract(operand1, operand2, operator);
-        		}else if(operator.equals("*") || operator.equals("/")){
+        }else if(operator.equals("*") || operator.equals("/")){
         		result = multiplyDivide(operand1, operand2, operator);
-        		}return result;
+        	}
+        else {
+        	return "Invalid operator";
+        }
+        return result;
     }		
         public static int [] splitOperand(String operand) {
         	int numerator = 0;
-            int denominator = 1;
+            	int denominator = 1;
            		int wholeNumber = 0;
                 if(operand.contains("/") && operand.contains("_")) {
                 	numerator = (Integer.parseInt(operand.split("_")[1].split("/")[0]));
