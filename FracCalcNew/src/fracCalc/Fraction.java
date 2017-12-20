@@ -1,3 +1,6 @@
+//Alex Soloviev
+//12-19-17
+
 package fracCalc;
 
 public class Fraction {
@@ -6,9 +9,7 @@ public class Fraction {
 	private int denominator = 1;
 	private int whole = 0;
 	
-	
-	
-	//Constructor that takes a string as a parameter. 
+	//Constructor that takes a string as a parameter
 	public Fraction (String operand) {
 		if (operand.contains("/") && operand.contains("_")) {
 			numerator = (Integer.parseInt(operand.split("_")[1].split("/")[0]));
@@ -45,6 +46,7 @@ public class Fraction {
 		result.setDenominator(this.denominator * operand2.getDenominator());
 		return result;
 	}
+	//Used for subtraction
 	public void changeSign() {
 		if(whole == 0) {
 			numerator *= -1;
@@ -58,9 +60,10 @@ public class Fraction {
 		return result;
 	}
 	
-	public void reciprocate() {//Used for division
-		if(numerator < 0) {	//<--- this is to make sure any negative signs stay with
-			denominator *= -1;	//the numerator which helps the simplification process
+	//Used for division
+	public void reciprocate() {
+		if(numerator < 0) {	
+			denominator *= -1;
 			numerator *= -1;
 		}
 		int temp = numerator;
@@ -69,7 +72,7 @@ public class Fraction {
 	}
 	
 	public void toImproper() {
-		if(whole < 0 && numerator > 0) {//makes sure the numerator is negative if the whole number was negative
+		if(whole < 0 && numerator > 0) {
 			numerator *= -1;
 		}
 		numerator = whole * denominator + numerator;
@@ -78,8 +81,8 @@ public class Fraction {
 
 	public void toMixedNumber() {
 		whole = numerator/denominator + whole;
-		if(whole != 0) { // if the number is a fraction with no whole number, then make the numerator...
-			numerator = Math.abs(numerator);//positive since the whole number contains the negative sign.
+		if(whole != 0) { 
+			numerator = Math.abs(numerator);
 		}
 		numerator = numerator % denominator;
 	}
@@ -90,41 +93,7 @@ public class Fraction {
 		numerator /= gcf;
 		denominator /= gcf;
 	}
-
-	//takes two integers and returns the greatest common factor of the integers.
-	public static int findGCF(int num1, int num2) {
-		num1 = Math.abs(num1);
-		num2 = Math.abs(num2);
-		for(int i = num1; i > 1; i--) {
-			if(num1 % i == 0 && num2 % i == 0) {
-				return i;
-			}
-		}
-		return 1;
-	}
-	//checks if denominator is 0
-	public boolean isDenominatorZero() {
-		if(denominator == 0) 
-			return true;
-		else 
-			return false;
-	}
-
-	public String toString() {
-		toMixedNumber();
-		if(whole == 0) {
-			if(numerator == 0) {
-				return "0";
-			}
-			return numerator + "/" + denominator;
-		}
-		if(numerator == 0) {
-			return "" + whole;
-		}
-		return whole + "_" + numerator + "/" + denominator;
-	}
-
-	//getters and setters below.
+	//getters and setters 
 	public int getNumerator() {
 		return numerator;
 	}
@@ -148,4 +117,39 @@ public class Fraction {
 	public void setDenominator(int denominator) {
 		this.denominator = denominator;
 	}
+	
+	//Returns the greatest common factor 
+	public static int findGCF(int num1, int num2) {
+		num1 = Math.abs(num1);
+		num2 = Math.abs(num2);
+		for(int i = num1; i > 1; i--) {
+			if(num1 % i == 0 && num2 % i == 0) {
+				return i;
+			}
+		}
+		return 1;
+	}
+	//Checks if denominator is 0
+	public boolean isDenominatorZero() {
+		if(denominator == 0) 
+			return true;
+		else 
+			return false;
+	}
+
+	public String toString() {
+		toMixedNumber();
+		if(whole == 0) {
+			if(numerator == 0) {
+				return "0";
+			}
+			return numerator + "/" + denominator;
+		}
+		if(numerator == 0) {
+			return "" + whole;
+		}
+		return whole + "_" + numerator + "/" + denominator;
+	}
+
+
 }
