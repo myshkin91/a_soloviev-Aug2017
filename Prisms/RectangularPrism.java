@@ -4,8 +4,8 @@
  * Provide a constructor and the methods required by its abstract superclass.  
  */
 
-public class RectangularPrism 
-{
-	
+public class RectangularPrism {
+	public double calcAreaOfBase();
+	public double calcPerimeter();
 }
 
