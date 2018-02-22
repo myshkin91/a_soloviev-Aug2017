@@ -10,17 +10,24 @@
  */
 
 
-public class TriangularPrism extends Prism {
-	private double sideA;
-	private double sideB;
-	private double sideC;
+public class TriangularPrism extends Prism{
+	private double sideA, sideB, sideC;
 	
-	public TriangularPrism(double h) {
+	public TriangularPrism(double s1, double s2, double s3, double h) {
 		super(h);
+		sideA= s1;
+		sideB= s2;
+		sideC= s3;
 		
 	}
-	//public double calcAreaOfBase();
-	//public double calcPerimeter();
+	public double calcAreaOfBase(){
+		double s= calcPerimeter()/2;
+		return Math.sqrt((s*(s-sideA)*(s-sideB)*(s-sideC)));
+	}
+	
+	public double calcPerimeter(){
+		return sideA + sideB + sideC;
+	}
 	
 	
 	
