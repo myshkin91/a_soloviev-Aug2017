@@ -14,7 +14,7 @@ public class Sphere extends ThreeDShape {
 		return (Math.PI * radius * radius * radius * 4) / 3;
 	}
 	
-	piublic double calcSA() {
+	public double calcSA() {
 		return Math.PI * radius * radius * 4;
 	}
 }
