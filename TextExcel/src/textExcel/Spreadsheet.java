@@ -2,28 +2,32 @@ package textExcel;
 
 // Update this file with your own code.
 
-public class Spreadsheet implements Grid
-{
+public class Spreadsheet implements Grid {
+	Cell [][] cells;
+	
+	public Spreadsheet(){
+		cells = new Cell[getRows()][getCols()];
+	}
 
 	@Override
 	public String processCommand(String command)
 	{
 		// TODO Auto-generated method stub
-		return null;
+		return " ";
 	}
 
 	@Override
 	public int getRows()
 	{
 		// TODO Auto-generated method stub
-		return 0;
+		return 20;
 	}
 
 	@Override
 	public int getCols()
 	{
 		// TODO Auto-generated method stub
-		return 0;
+		return 12;
 	}
 
 	@Override
