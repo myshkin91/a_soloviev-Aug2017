@@ -1,39 +1,36 @@
 package textExcel;
 
-// Update this file with your own code.
-
 public class Spreadsheet implements Grid {
-	Cell [][] cells;
-	
+	private Cell[][] grid = new Cell[12][20];
 	public Spreadsheet(){
-		cells = new Cell[getRows()][getCols()];
+		for(int row = 0; row < 12; row++) {
+			for(int col = 0;col <20;col++) {
+				grid[row][col] = new EmptyCell();
+			}
+		}
 	}
 
 	@Override
 	public String processCommand(String command)
 	{
-		// TODO Auto-generated method stub
-		return " ";
+		return "";
 	}
 
 	@Override
 	public int getRows()
 	{
-		// TODO Auto-generated method stub
 		return 20;
 	}
 
 	@Override
 	public int getCols()
 	{
-		// TODO Auto-generated method stub
 		return 12;
 	}
 
 	@Override
 	public Cell getCell(Location loc)
 	{
-		// TODO Auto-generated method stub
 		return null;
 	}
 
