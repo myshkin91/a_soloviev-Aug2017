@@ -1,14 +1,12 @@
 package textExcel;
 
 public class Spreadsheet implements Grid {
-	private Cell[][] grid = new Cell[12][20];
+	Cell[][] thisSheet;
+	
 	public Spreadsheet(){
-		for(int row = 0; row < 12; row++) {
-			for(int col = 0;col <20;col++) {
-				grid[row][col] = new EmptyCell();
-			}
+		thisSheet = new Cell[getCols()][getRows()];
 		}
-	}
+
 
 	@Override
 	public String processCommand(String command)
@@ -37,8 +35,12 @@ public class Spreadsheet implements Grid {
 	@Override
 	public String getGridText()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		String output = "  ";
+		
+		for(int i = 0; i < thisSheet.length; i++) {
+			output = output + "|" + ((char)(65+ i)) + "          ";
 	}
-
+		output += "\n";
+		return output;
+	}	
 }

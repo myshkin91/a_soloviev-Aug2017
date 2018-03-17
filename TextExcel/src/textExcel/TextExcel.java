@@ -8,7 +8,6 @@ public class TextExcel{
 
 	public static void main(String[] args)
 	{
-	    // Add your command loop here
 		boolean done = false;
 		Scanner userInput = new Scanner(System.in);
 		while(!done) {
