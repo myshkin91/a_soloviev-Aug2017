@@ -7,7 +7,7 @@ public class SpreadsheetLocation implements Location{
     
     public int getRow()
     {
-        String number = cellName.substring(1,cellName.length());
+        String number = cellName.substring(1,  cellName.length());
         int row = 0;
         while(!(number.equals(""+ row))) {
         		row ++;

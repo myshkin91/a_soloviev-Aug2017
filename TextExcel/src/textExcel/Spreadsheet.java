@@ -4,7 +4,7 @@ public class Spreadsheet implements Grid {
 	Cell[][] thisSheet;
 	
 	public Spreadsheet(){
-		thisSheet = new Cell[getCols()][getRows()];
+		thisSheet = new Cell[getCols()][getRows()]; 
 		}
 
 
