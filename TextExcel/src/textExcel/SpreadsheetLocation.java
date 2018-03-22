@@ -1,12 +1,11 @@
 package textExcel;
 
 public class SpreadsheetLocation implements Location{
+	
 	private String cellName;
-   
-	@Override
     
-    public int getRow()
-    {
+    public int getRow(){
+		
         String number = cellName.substring(1,  cellName.length());
         int row = 0;
         while(!(number.equals(""+ row))) {
@@ -15,7 +14,6 @@ public class SpreadsheetLocation implements Location{
         return row - 1;
     }
 
-    @Override
     public int getCol()
     {
         char letter = cellName.charAt(0);
@@ -24,7 +22,7 @@ public class SpreadsheetLocation implements Location{
     }
     
     public SpreadsheetLocation(String cellName){
-    	this.cellName = cellName;
+    	this.cellName = cellName.toLowerCase();
     }
 
 }
