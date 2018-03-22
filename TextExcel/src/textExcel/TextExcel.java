@@ -16,7 +16,7 @@ public class TextExcel{
 			if(userInput.nextLine().equals("quit")) {
 				done = true;
 			}else {
-				System.out.println(spreadsheet.processCommand(userInput));
+				System.out.println(sheet1.processCommand(userInput.nextLine()));
 			}
 		}
 	}

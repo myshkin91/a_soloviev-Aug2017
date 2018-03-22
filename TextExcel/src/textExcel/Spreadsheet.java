@@ -4,7 +4,7 @@ public class Spreadsheet implements Grid {
 	Cell[][] thisSheet;
 	
 	public Spreadsheet(){
-		thisSheet = new Cell[getCols()][getRows()]; 
+		thisSheet = new Cell[getRows()][getCols()]; 
 		reset();
 		}
 
@@ -17,24 +17,24 @@ public class Spreadsheet implements Grid {
 				Location thisCell = new SpreadsheetLocation(command);
 				return getCell(thisCell).fullCellText();
 			} else if (parsed.length == 2) {
-				if (command.toLowerCase().startsWith("clear")) {
+				if(command.toLowerCase().startsWith("clear")) {
 					Location thisCell = new SpreadsheetLocation(parsed[1]);
-					thisSheet[thisCell.getCols()][thisSheet.getRows()] = new EmptyCell();
-					return getGridText;
+					thisSheet[thisCell.getRow()][thisCell.getCol()] = new EmptyCell();
+					return getGridText();
 				}
 			} else {
-				if(Character.isAlphabetic(Character.toLowerCasse(command.charAt(0))) && Character.isDigit(command.charAt(1))) {
+				if(Character.isAlphabetic(Character.toLowerCase(command.charAt(0))) && Character.isDigit(command.charAt(1))) {
 					if(parsed[1].equals("=")) {
 						if(parsed[2].startsWith("" + '"')) {
 							Location thisCell = new SpreadsheetLocation(parsed[0].toLowerCase());
 							String input = parsed[2].substring(1, (parsed[2].length() - 1));
-							thisSheet[thisCell.getCols()][thisCell.getRows()] = new TextCell(input);
-							return getGridText;
+							thisSheet[thisCell.getRow()][thisCell.getCol()] = new TextCell(input);
+							return getGridText();
 						}
 					}
 				}
 			}
-		}
+		}return "TEST";
 	}
 
 	
@@ -49,7 +49,7 @@ public class Spreadsheet implements Grid {
 
 	
 	public Cell getCell(Location loc){
-		return thisSheet[loc.getCols()][loc.getRows()];
+		return thisSheet[loc.getRow()][loc.getCol()];
 	}
 
 	
@@ -77,7 +77,7 @@ public class Spreadsheet implements Grid {
 	private void reset() {
 		for (int r = 0; r< thisSheet[0].length; r++) {
 			for (int c = 0; c< thisSheet.length; c++) {
-				thisSheet[c][r] = new EmptyCell();]
+				thisSheet[c][r] = new EmptyCell();
 			}
 		}
 	}
