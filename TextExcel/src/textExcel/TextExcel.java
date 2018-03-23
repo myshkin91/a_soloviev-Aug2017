@@ -13,10 +13,11 @@ public class TextExcel{
 		Spreadsheet spreadsheet = new Spreadsheet();
 		Scanner userInput = new Scanner(System.in);
 		while(!done) {
-			if(userInput.nextLine().equals("quit")) {
+			String nextCommand = commandInput.nextLine();
+			if(nextCommand.equals("quit")) {
 				done = true;
 			}else {
-				System.out.println(sheet1.processCommand(userInput.nextLine()));
+				System.out.println(sheet1.processCommand(nextCommand));
 			}
 		}
 	}
