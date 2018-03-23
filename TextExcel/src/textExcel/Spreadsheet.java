@@ -7,7 +7,6 @@ public class Spreadsheet implements Grid {
 		thisSheet = new Cell[getRows()][getCols()]; 
 		reset();
 		}
-
 	public String processCommand(String command){
 		
 		String[] parsed = command.split(" ",3);
