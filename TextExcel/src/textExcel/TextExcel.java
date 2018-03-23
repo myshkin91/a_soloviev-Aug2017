@@ -13,7 +13,7 @@ public class TextExcel{
 		Spreadsheet spreadsheet = new Spreadsheet();
 		Scanner userInput = new Scanner(System.in);
 		while(!done) {
-			String nextCommand = commandInput.nextLine();
+			String nextCommand = userInput.nextLine();
 			if(nextCommand.equals("quit")) {
 				done = true;
 			}else {
