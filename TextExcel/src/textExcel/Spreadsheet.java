@@ -10,9 +10,25 @@ public class Spreadsheet implements Grid {
 
 	public String processCommand(String command){
 		
-		String[] parsed = command.split(" ",3);
+		String[] Command = command.split(" ",3);
 		
-		if(parsed.length == 1) {
+		if(Command.length == 2&&Command[0].toLowerCase().equals("clear")) {
+			clearCell((Command[1]));
+			return getGridText();
+		}else if(Command.length == 3) {
+			assignValue(Command[0], Command[2]);
+			return getGridText();
+		}else {
+			if(Command.length==1&&Command[0].toLowerCase().equals("clear"))){
+				clear();
+				return getGridText();
+			}
+		}else if(Command.length==1&&!Command[0].toLowerCase().equals("clear")) {
+			SpreadsheetLocation loc = new SpreadsheetLocation(Command[0]);
+			return getCell(loc).fullCellText();
+		}
+		
+		/*if(parsed.length == 1) {
 			if (Character.isAlphabetic(Character.toLowerCase(command.charAt(0))) && Character.isDigit(command.charAt(1))) {
 				Location thisCell = new SpreadsheetLocation(command);
 				return getCell(thisCell).fullCellText();
@@ -36,7 +52,7 @@ public class Spreadsheet implements Grid {
 			}
 		}return "TEST";
 	}
-
+*/
 	
 	public int getRows(){
 		return 20;
