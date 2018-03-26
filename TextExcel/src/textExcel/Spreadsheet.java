@@ -10,11 +10,11 @@ public class Spreadsheet implements Grid {
 	
 	public String processCommand(String command){
 		
-		String lCommand = command.toLowerCase();
-		if(lCommand.equals("clear")) {
+		String command1 = command.toLowerCase();
+		if(command1.equals("clear")) {
 			clear();
 		}
-		else (lCommand.startsWith("clear")){
+		else if(command1.startsWith("clear")){
 			SpreadsheetLocation loc = new SpreadsheetLocation(command.split(" ")[1]);
 			thisSheet[loc.getRow()][loc.getCol()] = new EmptyCell();
 		}else if (command.contains("=")) {
@@ -24,7 +24,8 @@ public class Spreadsheet implements Grid {
 		}else {
 			SpreadsheetLocation loc = new SpreadsheetLocation(command);
 			return thisSheet[loc.getRow()][loc.getCol()].fullCellText();
-		}return getGridText();
+		}
+		return getGridText();
 	}
 
 	
@@ -44,10 +45,10 @@ public class Spreadsheet implements Grid {
 
 	
 	public String getGridText(){
-		String output = "  ";
+		String output = "   ";
 		
 		for(int i = 0; i < thisSheet.length; i++) {
-			output = output + "|" + ((char)(65 + i)) + "          ";
+			output = output + "|" + ((char)(65 + i)) + "         ";
 	}
 		output += "|\n";
 		for(int r = 0; r<thisSheet[0].length; r++) {
