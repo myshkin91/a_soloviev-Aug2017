@@ -17,7 +17,7 @@ public class TextCell implements Cell {
 			abbreviated = cellContents.substring(0, 10);
 		} else{
 			abbreviated = cellContents;
-			for (int i = cellContents.length(); i <= 10 - 1; i++) {
+			for (int i = cellContents.length(); i <= 10-1; i++) {
 				abbreviated += " ";
 			}
 		}

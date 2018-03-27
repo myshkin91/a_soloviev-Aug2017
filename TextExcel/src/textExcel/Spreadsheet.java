@@ -14,7 +14,7 @@ public class Spreadsheet implements Grid {
 		if(command1.equals("clear")) {
 			clear();
 		}
-		else if(command1.startsWith("clear")){
+		else if(command1.startsWith("clear")){ 
 			SpreadsheetLocation loc = new SpreadsheetLocation(command.split(" ")[1]);
 			thisSheet[loc.getRow()][loc.getCol()] = new EmptyCell();
 		}else if (command.contains("=")) {
