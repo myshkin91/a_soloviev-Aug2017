@@ -8,7 +8,6 @@ public class Spreadsheet implements Grid {
 		clear();
 		}
 	
-	
 	public String processCommand(String command){
 		String [] parts = command.split(" ", 3);
 		String command1 = command.toLowerCase();
