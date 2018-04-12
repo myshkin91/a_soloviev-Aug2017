@@ -1,17 +1,23 @@
 package textExcel;
 
-public abstract class RealCell implements Cell{
+public class RealCell implements Cell{
 	private String input;
 	public RealCell(String input) {
 		this.input = input;
 	}
 	@Override
-	public abstract String abbreviatedCellText();
+	public String abbreviatedCellText() {
+		return input.substring(0,10);
+	}
 	
 	@Override
-	public abstract String fullCellText();
+	public String fullCellText() {
+		return input;
+	}
 	
-	public abstract double getDoubleValue();
+	public double getDoubleValue() {
+		return 0;
+	}
 	
 	public String getRealCell() {
 		return input;
