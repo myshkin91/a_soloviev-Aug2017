@@ -6,9 +6,14 @@ public class PercentCell extends RealCell {
 		super(input);
 	}
 	
-	public String abbreviatedCellText() {
-		int decimalPoint = getRealCell().indexOf(".");
-		return (getRealCell().substring(0,decimalPoint) + "%");
+	public String abbreviatedCellText() {int decimalPoint = getRealCell().indexOf(".");
+	String wholeNum = getRealCell().substring(0,decimalPoint);
+	if(wholeNum.length() < 10) {
+		wholeNum += "%";
+		return super.addSpaces(wholeNum);
+	}else {
+		return (wholeNum.substring(0,8) + "%");
+		}
 	}
 	public String fullCellText() {
 		String text = getDoubleValue() + "";

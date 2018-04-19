@@ -8,7 +8,7 @@ public class TextCell implements Cell {
 	}
 	
 	public String fullCellText(){
-		return "\"" + cellContents + "\"";
+		return (cellContents);
 	}
 	
 	public String abbreviatedCellText(){
