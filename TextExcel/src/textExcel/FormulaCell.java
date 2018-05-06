@@ -3,6 +3,7 @@ package textExcel;
 import java.util.ArrayList;
 
 public class FormulaCell extends RealCell {
+
 	private String input;
 	
 	//constructor

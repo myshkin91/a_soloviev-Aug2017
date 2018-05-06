@@ -3,6 +3,8 @@ package textExcel;
 public class TextCell implements Cell {
 	
 	private String cellContents;
+	
+	//constructor
 	public TextCell (String contents){
 		cellContents = contents;
 	}
@@ -23,5 +25,4 @@ public class TextCell implements Cell {
 		}
 		return abbreviated;
 	}
-
 }

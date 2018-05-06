@@ -1,6 +1,7 @@
 package textExcel;
 
 public class Spreadsheet implements Grid {
+	
 	private Cell[][] thisSheet;
 	
 	public Spreadsheet(){

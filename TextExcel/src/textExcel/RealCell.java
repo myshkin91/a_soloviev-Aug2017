@@ -1,7 +1,11 @@
+//Alex Soloviev
 package textExcel;
 
 public class RealCell implements Cell{
+	
 	private String input;
+	
+	//constructor
 	public RealCell(String input) {
 		this.input = input;
 	}
@@ -23,12 +27,10 @@ public class RealCell implements Cell{
 		return input;
 	}
 	
-	public String addSpaces(String text) {
-		while(text.length() <10) {
-			text +=" ";
+	public String addSpaces(String inputText) {
+		while(inputText.length() < 10) {
+			inputText += " ";
 		}
-		return text;
+		return inputText;
 	}
-	
-
 }
