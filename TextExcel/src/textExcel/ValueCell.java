@@ -3,6 +3,7 @@ package textExcel;
 
 public class ValueCell extends RealCell{
 	
+	//constructor
 	public ValueCell(String input) {
 		super(input);
 	}
@@ -19,10 +20,10 @@ public class ValueCell extends RealCell{
 		}
 	}
 	public String fullCellText() {
-		return getRealCell();
+		return input;
 	}
 	public double getDoubleValue() {
-		return Double.parseDouble(getRealCell());
+		return Double.parseDouble(input);
 	}
 
 }

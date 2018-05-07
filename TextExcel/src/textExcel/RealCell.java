@@ -3,7 +3,7 @@ package textExcel;
 
 public class RealCell implements Cell{
 	
-	private String input;
+	protected String input;
 	
 	//constructor
 	public RealCell(String input) {
