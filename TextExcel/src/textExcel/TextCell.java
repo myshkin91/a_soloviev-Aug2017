@@ -10,16 +10,15 @@ public class TextCell implements Cell {
 	}
 	
 	public String fullCellText(){
-		return (cellContents);
+		return cellContents;
 	}
 	
 	public String abbreviatedCellText(){
-		String abbreviated;
-		if(cellContents.length() > 10) {
-			abbreviated = cellContents.substring(0, 10);
+		String abbreviated = cellContents.substring(1,cellContents.length()-1);
+		if(abbreviated.length() >= 10) {
+			return abbreviated.substring(0,10);
 		} else{
-			abbreviated = cellContents;
-			for (int i = cellContents.length(); i <= 10-1; i++) {
+			for (int i = abbreviated.length(); i < 10; i++) {
 				abbreviated += " ";
 			}
 		}

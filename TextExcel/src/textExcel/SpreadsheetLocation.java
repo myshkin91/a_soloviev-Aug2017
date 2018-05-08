@@ -3,6 +3,10 @@ package textExcel;
 public class SpreadsheetLocation implements Location{
 	
 	private String cellName;
+	
+	 public SpreadsheetLocation(String cellName){
+ 		this.cellName = cellName.toLowerCase();
+	 }
     
     public int getRow(){
         String number = cellName.substring(1,cellName.length());
@@ -19,8 +23,6 @@ public class SpreadsheetLocation implements Location{
         return Character.getNumericValue(letter)- Character.getNumericValue('a');
     }
     
-    public SpreadsheetLocation(String cellName){
-    		this.cellName = cellName.toLowerCase();
-    }
+   
 
 }

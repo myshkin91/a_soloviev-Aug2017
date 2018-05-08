@@ -1,4 +1,3 @@
-//Alex Soloviev
 package textExcel;
 
 public class RealCell implements Cell{
@@ -27,6 +26,7 @@ public class RealCell implements Cell{
 		return input;
 	}
 	
+	//adds spaces to fill up the cell
 	public String addSpaces(String inputText) {
 		while(inputText.length() < 10) {
 			inputText += " ";
