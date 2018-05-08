@@ -35,7 +35,7 @@ public class FormulaCell extends RealCell {
 		}else if(formula.startsWith("avg")) {//average
 			return sum(arrFormula[1])/(retrieveCellRange(arrFormula[1]).size());
 		}else {
-			double result = determineDouble(arrFormula[1]);
+			double result = determineDouble(arrFormula[0]);
 			for(int i = 2; i < arrFormula.length; i+=2) {
 				String operator = arrFormula[i-1];
 				double number = determineDouble(arrFormula[i]);
