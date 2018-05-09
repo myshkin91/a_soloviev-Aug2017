@@ -1,3 +1,5 @@
+//Alex Soloviev
+
 package textExcel;
 
 public class PercentCell extends RealCell {
@@ -7,19 +9,20 @@ public class PercentCell extends RealCell {
 		super(input);
 	}
 	
-	public String abbreviatedCellText() {
-		int decimalPoint = getRealCell().indexOf(".");
-		String wholeNum = getRealCell().substring(0,decimalPoint);
-		if(wholeNum.length() < 10) {
-			wholeNum += "%";
-			return super.addSpaces(wholeNum);
-		}else {
-			return (wholeNum.substring(0,8) + "%");
-		}
+	public String fullCellText() {
+		return "" + getDoubleValue();
 	}
 	
-	public String fullCellText() {
-		return getDoubleValue() + "";
+	//text that is displayed in spreadsheet
+	public String abbreviatedCellText() {
+		int decimal = getRealCell().indexOf(".");
+		String temp = getRealCell().substring(0, decimal);
+		if(temp.length() < 10) {
+			temp += "%";
+			return super.addSpaces(temp);
+		}else {
+			return temp.substring(0,8) + "%";
+		}
 	}
 	
 	public double getDoubleValue() {

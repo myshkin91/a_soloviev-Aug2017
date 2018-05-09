@@ -1,3 +1,4 @@
+//Alex Soloviev
 package textExcel;
 
 public class RealCell implements Cell{
@@ -19,7 +20,7 @@ public class RealCell implements Cell{
 	}
 	
 	public double getDoubleValue() {
-		return 0;
+		return 0.0;
 	}
 	
 	public String getRealCell() {
@@ -27,10 +28,10 @@ public class RealCell implements Cell{
 	}
 	
 	//adds spaces to fill up the cell
-	public String addSpaces(String inputText) {
-		while(inputText.length() < 10) {
-			inputText += " ";
+	public String addSpaces(String input) {
+		for(int i = input.length(); i < 10; i++) {
+			input+= " ";
 		}
-		return inputText;
+		return input;
 	}
 }

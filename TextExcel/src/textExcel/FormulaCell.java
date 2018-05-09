@@ -30,26 +30,27 @@ public class FormulaCell extends RealCell {
 		String formula = input.substring(2, input.length() - 2).toLowerCase();
 		String[] arrFormula = formula.split(" ");
 	
-		if (formula.startsWith("sum")) {//sum
+		if (formula.startsWith("sum")) {   //sum
 			return sum(arrFormula[1]);
-		}else if(formula.startsWith("avg")) {//average
+		}else 
+		if(formula.startsWith("avg")) {    //average
 			return sum(arrFormula[1])/(retrieveCellRange(arrFormula[1]).size());
 		}else {
-			double result = determineDouble(arrFormula[0]);
+			double result = determineDouble(arrFormula[0]);  //regular formula cell
 			for(int i = 2; i < arrFormula.length; i+=2) {
 				String operator = arrFormula[i-1];
 				double number = determineDouble(arrFormula[i]);
 				if(operator.equals("+")) {
-					result +=number;
+					result += number;
 				}else
 				if (operator.equals("-")) {
-					result -=number;
+					result -= number;
 				}else
 				if(operator.equals("*")) {
-					result *=number;
+					result *= number;
 				}else
 				if(operator.equals("/")) {
-					result /=number;
+					result /= number;
 				}
 			}
 			return result;
@@ -58,15 +59,12 @@ public class FormulaCell extends RealCell {
 	}
 
 	public double determineDouble(String result) {
-		if(Character.isDigit(result.charAt(0)) || result.charAt(0) == '-') {//Check if the first character of result is a digit or a negative sign
-			return Double.parseDouble(result);//Use Double.ParseDouble to get the number, return the number
+		if(Character.isDigit(result.charAt(0)) || result.charAt(0) == '-') {  //Check if the first character of result is a digit or a negative sign
+			return Double.parseDouble(result);                                //Use Double.ParseDouble to get the number, return the number
 		}else {
-			SpreadsheetLocation loc = new SpreadsheetLocation(result);
-			return ((RealCell)thisSheet[loc.getRow()][loc.getCol()]).getDoubleValue();
-			//Make new SpreadsheetLoaction object by passing in "result", use spreadsheet location.get row and get col to access the 
-			//correct index in the array.
-			//return the .getDoubleValue
-		}
+			SpreadsheetLocation loc = new SpreadsheetLocation(result);                //Make new SpreadsheetLoaction object by passing in "result", 
+			return ((RealCell)thisSheet[loc.getRow()][loc.getCol()]).getDoubleValue(); //use spreadsheet location.get row and get col to access the correct	 															
+		}                                      										//index in the array, return the .getDoubleValue	                                   
 	}
 	public ArrayList<RealCell> retrieveCellRange (String cellRange){
 		ArrayList<RealCell> cells = new ArrayList<RealCell>();
@@ -84,6 +82,7 @@ public class FormulaCell extends RealCell {
 		return cells;
 	}
 
+	//This method returns the sum
 	public double sum (String cells) {
 		ArrayList<RealCell> allCells = retrieveCellRange(cells);
 		double sum = 0;
