@@ -14,6 +14,7 @@ public class FormulaCell extends RealCell {
 		this.thisSheet = thisSheet;
 	}
 
+	//This method returns the cell contents truncated to ten spaces
 	public String abbreviatedCellText() {
 		String temp = getDoubleValue() + "";
 		while(temp.length() < 10) {
@@ -22,6 +23,7 @@ public class FormulaCell extends RealCell {
 		return temp.substring(0, 10);
 	}
 
+	//This method returns the non-truncated cell contents
 	public String fullCellText() {
 		return input;
 	}

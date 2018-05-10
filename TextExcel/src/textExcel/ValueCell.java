@@ -9,10 +9,12 @@ public class ValueCell extends RealCell{
 		super(input);
 	}
 	
+	//This method returns the non-truncated cell contents
 	public String fullCellText() {
 		return input;
 	}
 	
+	//This method returns the cell contents truncated to ten spaces
 	public String abbreviatedCellText() {
 		String temp = getDoubleValue() + "";
 		while(temp.length() < 10) {
@@ -21,6 +23,7 @@ public class ValueCell extends RealCell{
 		return temp.substring(0, 10);
 	}
 	
+	//This method returns the double value 
 	public double getDoubleValue() {
 		return Double.parseDouble(input);
 	}

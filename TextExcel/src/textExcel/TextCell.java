@@ -11,10 +11,12 @@ public class TextCell implements Cell {
 		this.text = text;
 	}
 	
+	//This method returns the non-truncated cell contents
 	public String fullCellText(){
 		return text;
 	}
 	
+	//This method returns the cell contents truncated to ten spaces
 	public String abbreviatedCellText(){
 		String abbreviated = text.substring(1,text.length()-1);
 		if(abbreviated.length() >= 10) {

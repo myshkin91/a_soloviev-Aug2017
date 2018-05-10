@@ -93,7 +93,7 @@ public class Spreadsheet implements Grid {
 		}
 	}
 
-	//clears the entire spreadsheet
+	//This method clears the entire spreadsheet
 	private void clear() {
 		for (int r = 0; r < thisSheet[0].length; r++) {
 			for (int c = 0; c < thisSheet.length; c++) {

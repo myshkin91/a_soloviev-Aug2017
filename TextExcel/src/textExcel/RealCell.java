@@ -1,4 +1,5 @@
 //Alex Soloviev
+
 package textExcel;
 
 public class RealCell implements Cell{
@@ -10,11 +11,13 @@ public class RealCell implements Cell{
 		this.input = input;
 	}
 	@Override
+	//This method returns the cell contents truncated to ten spaces
 	public String abbreviatedCellText() {
 		return input.substring(0,10);
 	}
 	
 	@Override
+	//This method returns the non-truncated cell contents
 	public String fullCellText() {
 		return input;
 	}
@@ -26,12 +29,4 @@ public class RealCell implements Cell{
 	public String getRealCell() {
 		return input;
 	}
-	
-	//adds spaces to fill up the cell
-	public String addSpaces(String input) {
-		for(int i = input.length(); i < 10; i++) {
-			input+= " ";
-		}
-		return input;
-	}
-}
+} 
