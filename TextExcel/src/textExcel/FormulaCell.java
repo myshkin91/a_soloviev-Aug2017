@@ -16,7 +16,7 @@ public class FormulaCell extends RealCell {
 
 	public String abbreviatedCellText() {
 		String temp = getDoubleValue() + "";
-		for (int i = temp.length(); i < 10; i++) {
+		while(temp.length() < 10) {
 			temp += " ";
 		}
 		return temp.substring(0, 10);
@@ -34,7 +34,7 @@ public class FormulaCell extends RealCell {
 			return sum(arrFormula[1]);
 		}else 
 		if(formula.startsWith("avg")) {    //average
-			return sum(arrFormula[1])/(retrieveCellRange(arrFormula[1]).size());
+			return sum(arrFormula[1])/(retrieveCellRange(arrFormula[1]).size()); //uses the sum method for addition
 		}else {
 			double result = determineDouble(arrFormula[0]);  //regular formula cell
 			for(int i = 2; i < arrFormula.length; i+=2) {
@@ -58,6 +58,7 @@ public class FormulaCell extends RealCell {
 		
 	}
 
+	//This method changes the String to a double
 	public double determineDouble(String result) {
 		if(Character.isDigit(result.charAt(0)) || result.charAt(0) == '-') {  //Check if the first character of result is a digit or a negative sign
 			return Double.parseDouble(result);                                //Use Double.ParseDouble to get the number, return the number
@@ -66,6 +67,8 @@ public class FormulaCell extends RealCell {
 			return ((RealCell)thisSheet[loc.getRow()][loc.getCol()]).getDoubleValue(); //use spreadsheet location.get row and get col to access the correct	 															
 		}                                      										//index in the array, return the .getDoubleValue	                                   
 	}
+	
+	//This method returns the cells within the range, such as the cells from a1-b3
 	public ArrayList<RealCell> retrieveCellRange (String cellRange){
 		ArrayList<RealCell> cells = new ArrayList<RealCell>();
 		

@@ -1,4 +1,5 @@
 //Alex Soloviev
+
 package textExcel;
 
 public class ValueCell extends RealCell{
@@ -8,22 +9,19 @@ public class ValueCell extends RealCell{
 		super(input);
 	}
 	
-	public String abbreviatedCellText() {
-		String cellText = Double.toString(getDoubleValue());
-		if(cellText.length() < 10) {
-			if(!cellText.contains(".")) {
-				cellText += ".0";
-			}
-			return addSpaces(cellText);
-		}else {
-			return cellText.substring(0,10);
-		}
-	}
 	public String fullCellText() {
 		return input;
 	}
+	
+	public String abbreviatedCellText() {
+		String temp = getDoubleValue() + "";
+		while(temp.length() < 10) {
+			temp += " ";
+		}
+		return temp.substring(0, 10);
+	}
+	
 	public double getDoubleValue() {
 		return Double.parseDouble(input);
 	}
-
 }

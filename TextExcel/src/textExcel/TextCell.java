@@ -1,4 +1,5 @@
 //Alex Soloviev
+
 package textExcel;
 
 public class TextCell implements Cell {
@@ -19,8 +20,10 @@ public class TextCell implements Cell {
 		if(abbreviated.length() >= 10) {
 			return abbreviated.substring(0,10);
 		} else {
-			for (int i = abbreviated.length(); i < 10; i++) {
+			int i = abbreviated.length();
+			while(i < 10) {
 				abbreviated += " ";
+				i++;
 			}
 		}
 		return abbreviated;

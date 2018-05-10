@@ -1,9 +1,12 @@
+//Alex Soloviev
+
 package textExcel;
 
 public class SpreadsheetLocation implements Location{
 	
 	private String cellName;
 	
+	//constructor
 	 public SpreadsheetLocation(String cellName){
  		this.cellName = cellName.toLowerCase();
 	 }
@@ -22,7 +25,4 @@ public class SpreadsheetLocation implements Location{
         letter = Character.toLowerCase(letter);
         return Character.getNumericValue(letter)- Character.getNumericValue('a');
     }
-    
-   
-
 }

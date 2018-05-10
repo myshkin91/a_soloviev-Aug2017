@@ -23,11 +23,13 @@ public class Spreadsheet implements Grid {
 		if(command1.equals("clear")) {                //clears entire spreadsheet
 			clear();
 			return getGridText();
-		}else if(command1.startsWith("clear")){       //clears specific cell
+		}else
+		if(command1.startsWith("clear")){       //clears specific cell
 			SpreadsheetLocation loc = new SpreadsheetLocation(command.split(" ")[1]);
 			thisSheet[loc.getRow()][loc.getCol()] = new EmptyCell();
 			return getGridText();
-		}else if(command.length() == 2 || command.length() == 3){       //inspects cell, such as a1 or a10. It returns the value in the cell
+		}else 
+		if(command.length() == 2 || command.length() == 3){       //inspects cell, such as a1 or a10. Returns the value in the cell
 			SpreadsheetLocation loc = new SpreadsheetLocation(command);
 			return thisSheet[loc.getRow()][loc.getCol()].fullCellText();
 		}
@@ -49,20 +51,28 @@ public class Spreadsheet implements Grid {
 	public String getGridText() {
 		String output = "   ";
 
-		for (int i = 0; i < thisSheet[0].length; i++) {
+		int i = 0;
+		while(i < thisSheet[0].length) {
 			output = output + "|" + ((char) (65 + i)) + "         ";
+			i++;
 		}
 		output += "|\n";
-		for (int r = 0; r < thisSheet.length; r++) {
+		
+		int r = 0;
+		while(r < thisSheet.length) {
 			String rowNumber = "" + (r + 1);
 			while (rowNumber.length() < 3) {
 				rowNumber += " ";
 			}
 			output += rowNumber;
-			for (int c = 0; c < thisSheet[0].length; c++) {
+			
+			int c = 0;
+			while(c < thisSheet[0].length) {
 				output = output + "|" + thisSheet[r][c].abbreviatedCellText();
+				c++;
 			}
 			output += "|\n";
+			r++;
 		}
 		return output;
 	}
